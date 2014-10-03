@@ -158,13 +158,12 @@ class Morph {
       
       if (amt < 0.5) { 
         noiseAmt = map(amt, 0, 0.5, 1, 0);
-        noiseAmt = easeInOutCubic(noiseAmt, 0, 1, 1);
-        morphToNoise(tmpShape, getShapeSize(tmpShape), visiblePoints, noiseAmt);
       } else {
         noiseAmt = map(amt, 0.5, 1, 0, 1);
-        noiseAmt = easeInOutCubic(noiseAmt, 0, 1, 1);
-        morphToNoise(tmpShape, getShapeSize(tmpShape), visiblePoints, noiseAmt);
       }
+
+      noiseAmt = easeInOutCubic(noiseAmt, 0, 1, 1);
+      morphToNoise(tmpShape, getShapeSize(tmpShape), visiblePoints, noiseAmt);
       
     }
     
@@ -195,32 +194,7 @@ class Morph {
     };
     
     
-    float easeInQuint(float t, float b, float c, float d) {
-      t /= d;
-      return c*t*t*t*t*t + b;
-    };
-    
-    float easeOutQuint(float t, float b, float c, float d) {
-      t /= d;
-      t--;
-      return c*(t*t*t*t*t + 1) + b;
-    };
-
-    float easeInOutQuint(float t, float b, float c, float d) {
-      t /= d/2;
-      if (t < 1) return c/2*t*t*t*t*t + b;
-      t -= 2;
-      return c/2*(t*t*t*t*t + 2) + b;
-    };
     
     
 
 }
-
-
-
-
-
-
-
-
