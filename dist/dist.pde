@@ -1,5 +1,6 @@
 import peasy.*;
 import java.util.*;
+import objloader.*;
 
 
 PeasyCam cam;
